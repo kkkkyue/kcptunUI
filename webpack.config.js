@@ -9,7 +9,7 @@ module.exports={
     target: 'electron',
     devtool: 'source-map',
     entry: {
-        ui: './src/ui/ui'
+        ui: './src/ui/app'
     },
     output: {
         path: APP_PATH,

@@ -34,45 +34,15 @@
 </head>
 
 <body>
-    <header data-am-widget="header" class="am-header am-header-default">
-        <div class="am-header-left am-header-nav">
-            <a href="#left-link" class="">
-                <span class="am-header-nav-title">
-                首页
-              </span>
-
-                <i class="am-header-icon am-icon-home"></i>
-            </a>
-        </div>
-
-        <h1 class="am-header-title">
-            Amaze UI
-        </h1>
-
-        <div class="am-header-right am-header-nav">
-            <a href="#right-link" class="">
-                <span class="am-header-nav-title">
-                菜单
-              </span>
-
-                <i class="am-header-icon am-icon-bars"></i>
-            </a>
-        </div>
-    </header>
+    <div id="header"></div>
+    <div id="Button"></div>
     <button type="button" class="am-btn am-btn-default">关闭进程</button>
 
     <!--在这里编写你的代码-->
-    <script>
-    // 重命名 Electron 提供的 require
-    window.nodeRequire = require;
-    delete window.require;
-    delete window.exports;
-    delete window.module;
-    </script>
-    
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="js/jquery.min.js"></script>
     <script src="js/amazeui.min.js"></script>
-    <script src="js/kcp.js"></script>
+    <script src="ui.js"></script>
 </body>
 
 </html>
