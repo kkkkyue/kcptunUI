@@ -46,9 +46,12 @@
     <script>
     $("#setKCPButton").click(function(){ 
         const kcpTOOL = require('./js/kcp.js');
+        kcpTOOL.killKCP('28989',function(){
         kcpTOOL.SetKCP(function(data){
 
          }); 
+        })
+
     });
     
     </script>
