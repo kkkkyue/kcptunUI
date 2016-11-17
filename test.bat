@@ -1,0 +1,1 @@
+node_modules\.bin\electron --debug-brk=5858 app

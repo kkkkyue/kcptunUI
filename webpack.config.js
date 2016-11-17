@@ -51,6 +51,7 @@ module.exports={
             {from:path.resolve(BOWER_PATH,'amazeui/dist/css/amazeui.min.css'),to:'css/amazeui.min.css'},
             {from:path.resolve(BOWER_PATH,'amazeui/dist/fonts/'),to:'fonts/'},          
             { from: path.resolve(SRC_PATH, 'main.js'), to: 'main.js' },
+            { from: path.resolve(SRC_PATH, 'package.json'), to: 'package.json' },
             { from: path.resolve(SRC_PATH, 'js/kcp.js'), to: 'js/kcp.js' },
             { from: path.resolve(SRC_PATH, 'ui/index.html'), to: 'index.html' }         
             ])

@@ -1,0 +1,19 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "0.1.0",
+    "command": "cmd",
+    "isShellCommand": true,
+    "args": [],
+    "showOutput": "always",
+    "tasks": [
+        {
+            "taskName": "webpack",
+            "args": ["/c","${cwd}/node_modules/.bin/webpack"]
+        },
+        {
+            "taskName": "electron",
+            "args": ["/c","${cwd}/node_modules/.bin/electron app"]
+        }
+    ]
+}

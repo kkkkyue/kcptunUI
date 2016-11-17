@@ -14,7 +14,7 @@ var mainWindow = null;
 
 // 当所有窗口都关闭的时候退出应用
 app.on('window-all-closed', function () {
-  kcpTOOL.killKCP(28989, function () {
+  kcpTOOL.killKCP('28989', function () {
     if (process.platform != 'darwin') {
       app.quit();
     }

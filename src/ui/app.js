@@ -14,9 +14,20 @@ var topbarInstance = (
   </AMUIReact.Topbar>
 );
 
-var button=(
-    <AMUIReact.Button>关闭进程</AMUIReact.Button>
+var handleClick = function() {
+  
+};
+
+var button = (
+  <AMUIReact.Button id="setKCPButton" onClick={handleClick}>关闭进程</AMUIReact.Button>
+);
+
+var formInstance = (
+  <form className="am-form" target="_blank">
+    <AMUIReact.Input type="file" label="尊容" id="doc-ipt-3" help="选择一个文件" />
+  </form>
 );
 
 ReactDOM.render(topbarInstance, document.getElementById('header'));
 ReactDOM.render(button, document.getElementById('Button'));
+ReactDOM.render(formInstance, document.getElementById('form1'));
