@@ -1,5 +1,6 @@
 var path=require('path');
 var webpack=require('webpack');
+var ignoreFiles = new webpack.IgnorePlugin(/\.\/kcp.js$/);
 var CopyWebpackPlugin=require('copy-webpack-plugin');
 var APP_PATH=path.resolve(__dirname,'app');
 var SRC_PATH=path.resolve(__dirname,'src');
@@ -9,7 +10,7 @@ module.exports={
     target: 'electron',
     devtool: 'source-map',
     entry: {
-        ui: './src/ui/app'
+        app: './src/ui/app'
     },
     output: {
         path: APP_PATH,
@@ -43,7 +44,8 @@ module.exports={
         ]
     },
     plugins: [
-        new webpack.optimize.DedupePlugin(), //new webpack.optimize.UglifyJsPlugin({comments: false}),         
+        new webpack.optimize.DedupePlugin(), //new webpack.optimize.UglifyJsPlugin({comments: false}),  
+        ignoreFiles,       
         new webpack.EnvironmentPlugin(["NODE_ENV"]),         
         new CopyWebpackPlugin([
             {from:path.resolve(BOWER_PATH,'jquery/dist/jquery.min.js'),to:'js/jquery.min.js'},
@@ -52,7 +54,7 @@ module.exports={
             {from:path.resolve(BOWER_PATH,'amazeui/dist/fonts/'),to:'fonts/'},          
             { from: path.resolve(SRC_PATH, 'main.js'), to: 'main.js' },
             { from: path.resolve(SRC_PATH, 'package.json'), to: 'package.json' },
-            { from: path.resolve(SRC_PATH, 'js/kcp.js'), to: 'js/kcp.js' },
+            { from: path.resolve(SRC_PATH, 'backend/'), to: 'backend/' },
             { from: path.resolve(SRC_PATH, 'ui/index.html'), to: 'index.html' }         
             ])
     ] 

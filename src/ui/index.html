@@ -37,23 +37,12 @@
     <div id="header"></div>
     <div id="Button"></div>
     <div id="form1"></div>
-
+    <textarea id="context" style=’resize:none;height:300px;width:100%;max-height:300px;’ ></textarea>
     <!--在这里编写你的代码-->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="js/jquery.min.js"></script>
     <script src="js/amazeui.min.js"></script>
-    <script src="ui.js"></script>
-    <script>
-    $("#setKCPButton").click(function(){ 
-        const kcpTOOL = require('./js/kcp.js');
-        kcpTOOL.killKCP('28989',function(){
-        kcpTOOL.SetKCP(function(data){
-         }); 
-        })
-
-    });
-    
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>

@@ -31,7 +31,7 @@ module.exports = {
         var e = "cmd.exe";
         var cmdStr = 'client_windows_amd64.exe -l :28989 -r 103.219.192.8:38989 --crypt aes --key 19850620wj --mtu 1350 --sndwnd 128 --rcvwnd 1024 --mode fast2';
 
-        s = exec(e, ['/c', cmdStr]);
+        var s = exec(e, ['/c', cmdStr]);
 
         s.stdout.on('data', function (data) {
             console.log('标准输出：\n' + data);

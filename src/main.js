@@ -6,7 +6,7 @@
 // 应用的控制模块
 const electron = require('electron');
 const app = electron.app;
-const kcpTOOL = require('./js/kcp.js');
+const kcpTOOL = require('./backend/kcp.js');
 
 // 创建原生浏览器窗口的模块
 const BrowserWindow = electron.BrowserWindow;
