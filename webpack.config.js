@@ -53,6 +53,7 @@ module.exports={
             {from:path.resolve(BOWER_PATH,'amazeui/dist/css/amazeui.min.css'),to:'css/amazeui.min.css'},
             {from:path.resolve(BOWER_PATH,'amazeui/dist/fonts/'),to:'fonts/'},          
             { from: path.resolve(SRC_PATH, 'main.js'), to: 'main.js' },
+            { from: path.resolve(SRC_PATH, 'ico.png'), to: 'ico.png' },
             { from: path.resolve(SRC_PATH, 'package.json'), to: 'package.json' },
             { from: path.resolve(SRC_PATH, 'backend/'), to: 'backend/' },
             { from: path.resolve(SRC_PATH, 'ui/index.html'), to: 'index.html' }         

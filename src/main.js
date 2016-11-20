@@ -6,13 +6,17 @@
 // 应用的控制模块
 const electron = require('electron');
 const app = electron.app;
+const Menu = electron.Menu
+const Tray = electron.Tray
 const kcpTOOL = require('./backend/kcp.js');
 
+var appIcon = null
 // 创建原生浏览器窗口的模块
 const BrowserWindow = electron.BrowserWindow;
 var mainWindow = null;
 
-// 当所有窗口都关闭的时候退出应用
+//var aboutWindow = null;
+
 app.on('window-all-closed', function () {
   kcpTOOL.killKCP('28989', function () {
     if (process.platform != 'darwin') {
@@ -22,25 +26,28 @@ app.on('window-all-closed', function () {
 
 });
 
-// 当 Electron 结束的时候，这个方法将会生效
-// 初始化并准备创建浏览器窗口
 app.on('ready', function () {
 
-  // 创建浏览器窗口.
+  appIcon = new Tray( __dirname +'/ico.png')
+  var contextMenu = Menu.buildFromTemplate([
+    { label: 'Item1', type: 'radio' },
+    { label: 'Item2', type: 'radio' },
+    { label: 'Item3', type: 'radio', checked: true },
+    { label: 'Item4', type: 'radio' }
+  ])
+  appIcon.setToolTip('This is my application.')
+  appIcon.setContextMenu(contextMenu)
+
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
 
-  // 载入应用的 index.html
   mainWindow.loadURL('file://' + __dirname + '/index.html');
 
-  // 打开开发工具
-  mainWindow.openDevTools();
+  //mainWindow.hide();
 
-  // 窗口关闭时触发
+  //mainWindow.openDevTools();
+
   mainWindow.on('closed', function () {
 
-    // 想要取消窗口对象的引用，如果你的应用支持多窗口，
-    // 通常你需要将所有的窗口对象存储到一个数组中，
-    // 在这个时候你应该删除相应的元素
     mainWindow = null;
   });
 

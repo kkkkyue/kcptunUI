@@ -6,9 +6,9 @@ var topbarInstance = (
   <AMUIReact.Topbar brand="KCPTUN 客户端" toggleNavKey="nav">
     <AMUIReact.CollapsibleNav eventKey="nav">
       <AMUIReact.Nav topbar>
-        <AMUIReact.NavItem active href="http://www.amazeui.org">首页</AMUIReact.NavItem>
-        <AMUIReact.NavItem href="http://www.amazeui.org">开始使用</AMUIReact.NavItem>
-        <AMUIReact.NavItem href="http://www.amazeui.org">按需定制</AMUIReact.NavItem>
+        <AMUIReact.NavItem active href="index.html">首页</AMUIReact.NavItem>
+        
+        <AMUIReact.NavItem href="aboutus.html">关于</AMUIReact.NavItem>
       </AMUIReact.Nav>
     </AMUIReact.CollapsibleNav>
   </AMUIReact.Topbar>
